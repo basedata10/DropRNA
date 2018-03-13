@@ -1,5 +1,12 @@
 # DropRNA
 
+
+## Prepare
+STAR aligner
+download GRCh38 and build STAR index
+download GTF and processed Transcrption, Exon position file from 10X cellranger site
+
+
 ## Step1: Extract the Cell Barcode
 
 ```
