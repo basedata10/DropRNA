@@ -3,7 +3,7 @@
 ## Step1: Extract the Cell Barcode
 
 ```
-python 00_get_cellbarcode.py /mnt/gpfs/Database/server/django2/basedata/pipelines/DropSeq/_config.json ./10X_1.1.fq.gz  ./X10.1.pickle 10X 20 &
+python 00_get_cellbarcode.py ./_config.json ./10X_1.1.fq.gz  ./X10.1.pickle 10X 20 &
 ```
 
 ## Step2: Stats on the Cell Barcode
