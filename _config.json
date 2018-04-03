@@ -1,0 +1,17 @@
+{
+  "indrop" : {
+    "whitelist":[
+      "/mnt/gpfs/Users/wufan/p09_new_inDrop/ref/barcode_lists/gel_barcode1_list.txt",
+      "/mnt/gpfs/Users/wufan/p09_new_inDrop/ref/barcode_lists/gel_barcode2_list.txt"
+    ]
+  },
+  "dropseq" : {
+    "whitelist" : ""
+  },
+  "10X" : {
+    "whitelist" : "/mnt/gpfs/Users/zhangxiannian/projects/p11_dropseq/refs/barcode_10x.txt"
+  },
+  "configs" : {
+    "min_reads" : 10000
+  }
+}
