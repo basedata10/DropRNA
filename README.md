@@ -1,30 +1,33 @@
 # DropRNA
 
+## Prepare configure file: config_drops.ini
+The pipeline need samtools, STAR software.
+The barcode whitelist files for indrop and 10X should be placed under whitelistDir.
+The key process of read alignment and tagging to genes are inspired and borrowed from the open source cellranger pipeline(https://github.com/10XGenomics/cellranger). The refernces of genome index and transcriptome can be downloaded from https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest.
+In the config file, the directory of cellrange references is named as cellranger_<genome>.
 
-## Prepare
-STAR aligner
-download GRCh38 and build STAR index
-download GTF and processed Transcrption, Exon position file from 10X cellranger site
+[Drops]
+samtools = /path/to/samtools
+star = /path/to/STAR
+whitelistDir = /path/to/whitelist_file_directory
+cellranger_hg38 = /path/to/reference/refdata-cellranger-GRCh38-1.2.0/
 
+## Extract the Cell Barcode
+Counting the number of each kinds of barcode; this will genrate a barcode_count.<sample>.csv;
 
-## Step1: Extract the Cell Barcode
+## Cell Barcode correction and filtering
+Correcting the cell barcode with 1bp mismatch, filtering the barcode with min number of reads;
 
-```
-python 00_get_cellbarcode.py ./_config.json ./10X_1.1.fq.gz  ./X10.1.pickle 10X 20 &
-```
+## Split the reads of valid Cell Barcodes
+The raw pair-end raw reads are splitted to 16 single end, according to the 2bp prefix of barcode;
+For example, we will get: split.<sample>.<AA|AT|AC|AG...|GG>.fq
+This enables multiprocessing of the dataset;
 
-## Step2: Stats on the Cell Barcode
-```
-python 01_cellbarcode_stats.py _config.json ./X10.1.pickle ./X10.1.stats.json 10X 20000 1000 &
-```
+## Star Alignment
+4 fastq files runs at the same time;
+The bam file sorted by sequence header is generated;
 
-## Step3: Split the reads of valid Cell Barcodes
-```
-python 02_split_barcode.py ./10X_1.1.fq.gz ./10X_1.2.fq.gz  ./X10.1.stats.json ./reads_10x1 10X &
-```
+## Reads tagging
+Tagging the reads alignment position to the corresponding gene name
 
-## Step4: Star Alignment
-
-## Step5: Tagging Reads to Gene Names
-
-## Step6: Aggregate the UMI counts and Read counts from a sample to an Matrix
+## Genrating UMI table
