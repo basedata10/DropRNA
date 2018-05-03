@@ -13,7 +13,7 @@ The pipeline need the following software or resources:
 
 + `star`: STAR software, for fast alignment of RNA-Seq data;
 + `samtools`: Sorting bam file;
-+ `whitelistDir`: The barcode whitelist files for indrop and 10X should be placed under whitelistDir. These files
++ `whitelistDir`: The barcode whitelist files for indrop and 10X should be placed under whitelistDir. These files could bed dowmloaded from https://github.com/basedata10/DropRNA/tree/master/whitelist;
 + `cellranger_ref_<genome>`: The key process of read alignment and tagging to genes are inspired and borrowed from the open source cellranger pipeline(https://github.com/10XGenomics/cellranger). The refernces of genome index and transcriptome can be downloaded from https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest.
 In the config file, the directory of cellrange references is named as `cellranger_<genome>`.
 
