@@ -23,7 +23,7 @@ While running command, the configures are recorded in the file called `config_dr
     samtools = /path/to/samtools
     star = /path/to/STAR
     whitelistDir = /path/to/whitelist_file_directory
-    cellranger_hg38 = /path/to/reference/refdata-cellranger-GRCh38-1.2.0/
+    cellranger_ref_hg38 = /path/to/reference/refdata-cellranger-GRCh38-1.2.0/
 
 
 ## Process Steps
