@@ -17,6 +17,8 @@ The pipeline need the following software or resources:
 + `cellranger_ref_<genome>`: The key process of read alignment and tagging to genes are inspired and borrowed from the open source cellranger pipeline(https://github.com/10XGenomics/cellranger). The refernces of genome index and transcriptome can be downloaded from https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest.
 In the config file, the directory of cellrange references is named as `cellranger_<genome>`.
 
+A file named as "genes_transcript.txt" which records the gene ID, transcript ID and genes names should be added to the reference folder. The file are available at https://github.com/basedata10/DropRNA/tree/master/gene_transcript.
+
 While running command, the configures are recorded in the file called `config_drops.ini`:
 
     [Drops]
