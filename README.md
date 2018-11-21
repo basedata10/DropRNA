@@ -68,11 +68,10 @@ We also provide step-wise ways for running the pipeline, all the parameters shou
 
 The steps are listed:
 
-`Cell Barcode Counting`:  --step count
-`Cell Barcode Correction, Aggregating and Filtering`: --step stats
-`Split the Reads of Valid Cell Barcodes`: --step split
-`Alignment to Genome using STAR`: --step star
-`Reads Tagging` : --step tagging
-`Generating Expression Table`: --step table
-
++ `Cell Barcode Counting`:  --step count
++ `Cell Barcode Correction, Aggregating and Filtering`: --step stats
++ `Split the Reads of Valid Cell Barcodes`: --step split
++ `Alignment to Genome using STAR`: --step star
++ `Reads Tagging` : --step tagging
++ `Generating Expression Table`: --step table
 
